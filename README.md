@@ -1,2 +1,1 @@
-hello there
-project website
+hello there, this is a project website
