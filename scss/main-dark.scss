@@ -1,0 +1,262 @@
+// Variables
+$mobile-breakpoint: 468px;
+$background: #212121;
+$foreground: #121212;
+$primary: #30BEB0;
+
+@font-face {
+    font-family: 'Lineto-black';
+    src: url('../fonts/lineto-circular-black.woff') format('woff'),
+         url('../fonts/lineto-circular-black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lineto-medium';
+    src: url('../fonts/lineto-circular-pro-medium.woff') format('woff'),
+         url('../fonts/lineto-circular-pro-medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Marat-Sans";
+    src: url('../fonts/Marat\ Sans\ Regular.woff') format('woff');
+}
+
+.lineto-black {
+    font-family: 'Lineto-black';
+}
+
+.lineto-medium {
+    font-family: 'Lineto-medium';
+}
+
+.marat-sans {
+    font-family: 'Marat-Sans';
+}
+
+nav {
+    @extend .lineto-medium;
+}
+
+nav > a {
+    color: #fff !important;
+}
+
+body {
+    color: #fff;
+    @extend .marat-sans;
+    background: $background;
+}
+
+.bg-brighter {
+    background: $foreground;
+}
+
+b {
+    @extend .lineto-black;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #121212;
+
+    &:hover {
+        background-color: #000;
+    }
+}
+
+// Custom classes
+
+.dark-text {
+    color: darken(#E0E0E0, 20%);
+}
+
+.top-post-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.rounded-xl {
+    border-radius: 10px;
+}
+
+.rounded-xl-left {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+// Top Posts
+
+#top-post .container-fluid {
+    @extend .marat-sans;
+}
+
+#top-post-container #top-post-img {
+    position: relative;
+    transition: .2s ease;
+}
+
+#top-btn-container {
+    position: absolute;
+    bottom: 30px;
+    right: 45px;
+    visibility: hidden;
+}
+
+#top-post-img:hover #top-btn-container {
+    transition: .2s ease;
+    visibility: visible;
+}
+
+// Button
+
+button {
+    outline: none !important;
+    border: none !important;
+}
+
+.button {
+    padding: 8px 24px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 35px;
+}
+
+.btn-light {
+    background: $primary;
+    color: #121212;
+
+    &:hover {
+        background: $primary;
+        opacity: 0.8;
+    }
+
+    &:focus, &:active {
+        background: $primary !important;
+    }
+}
+
+// Cards
+
+.small-card {
+    width: 300px;
+    margin: 30px 10px;
+    position: relative;
+    transition: .2s ease;
+}
+
+#btn-container {
+    position: absolute;
+    top: 50px;
+    right: 60px;
+    visibility: hidden;
+}
+
+.small-card:hover #btn-container {
+    transition: .2s ease;
+    visibility: visible;
+}
+
+.small-card:hover img {
+    transition: .2s ease;
+    opacity: 0.5;
+}
+
+.btn-card-overlay {
+    font-size: 20px;
+    padding: 10px 20px;
+
+    text-transform: uppercase;
+    @extend .lineto-medium;
+    border-radius: 25px;
+}
+
+.img-fluid-card {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+@keyframes reveal {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+// Slick arrows
+
+.slick-prev:before {
+    color: red;
+    font-size: 30px;
+}
+  
+.slick-next:before {
+    color: red;
+    font-size: 30px;
+}
+
+// Footer
+
+#footer {
+    @extend .lineto-medium;
+
+    @media only screen and (max-width: $mobile-breakpoint) {
+        text-align: center !important;
+    }
+}
+
+#share-items {
+    text-align: right;
+
+    @media only screen and (max-width: $mobile-breakpoint) {
+        padding-top: 25px;
+        text-align: center
+    }
+}
+
+$twitterBrandColor: #1DA1F2;
+$githubBrandColor: #333;
+
+.list-inline-item {
+    border-radius: 50%;
+    padding: 13px 15px;
+    margin: 0 15px;
+    border-width: 2px;
+    border-style: solid;
+    transition: .2s ease-in;
+}
+
+.list-inline > .twitter-item {
+    color: $twitterBrandColor;
+    border-color: $twitterBrandColor;
+
+    &:hover {
+        color: #fff;
+        background: $twitterBrandColor !important;
+    }
+}
+
+.list-inline-item a {
+    color: inherit;
+}
+
+.list-inline > .github-item {
+    color: $githubBrandColor;
+    border-color: $githubBrandColor;
+
+    &:hover {
+        color: #fff;
+        background-color: $githubBrandColor !important;
+    }
+}

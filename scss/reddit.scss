@@ -1,0 +1,33 @@
+// Flairs
+
+.bg-flair {
+    color: #000;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.bg-screenshot {
+    @extend .bg-flair;
+    background: #FFD54F;
+}
+
+.bg-workflow {
+    @extend .bg-flair;
+    background: #FF7043;
+}
+
+.bg-material {
+    @extend .bg-flair;
+    background: #AB47BC;
+}
+
+// Upvotes, awards etc
+
+.upvote-color {
+    color: orangered;
+}
+
+.award-color {
+    @extend .upvote-color;
+}
